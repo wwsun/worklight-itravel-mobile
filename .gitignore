@@ -10,3 +10,19 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+#worklight
+
+.settings/
+apps/itravel/.idea/
+apps/itravel/android/
+apps/itravel/legal/
+apps/itravel/mobilewebapp/
+apps/itravel/common/jqueryMobile/
+
+server/conf/
+
+bin/
+components/
+externalServerLibraries/
+services/
