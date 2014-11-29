@@ -6,3 +6,11 @@ function getScenicsByCityCode(cityCode) {
 		result : scenicDAO.getScenicsByCityCode(cityCode)
 	};
 }
+
+function getCodeByName(cityName) {
+	var cityDAO = new com.itravel.util.MongoFactory().getCityDAO();
+	
+	return {
+		result : cityDAO.getCodeByName(cityName)
+	};
+}

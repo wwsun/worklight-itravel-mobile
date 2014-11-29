@@ -24,7 +24,12 @@ public class CityDAO {
 				.sort(new BasicDBObject().append("name", -1));
 		cities = cursor.toArray();
 		cursor.close();
-		
 		return cities;
+	}
+	
+	public String getCodeByName(String name) {
+		DBObject query = QueryBuilder.start("name").is(name).get();
+		DBObject result = cityCollection.findOne( query, new BasicDBObject("city_code", true).append("_id", false));
+		return result.get("city_code").toString();
 	}
 }

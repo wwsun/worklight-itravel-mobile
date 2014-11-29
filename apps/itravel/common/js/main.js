@@ -1,10 +1,7 @@
-var baiduMap = new BMap.Map("map-container");
-var defaultPoint = new BMap.Point(118.825438, 31.889814);
+
 
 function wlCommonInit(){
-	//var point = getCurrentPositionByBaiduMap();
-	//initMap(point);
-	//$(document).ready(initMap);
+
 }
 
 function initMap() {
@@ -23,12 +20,33 @@ function initMap() {
 				renderOptions: {map: map, panel: "r-result"}
 			});
 			local.search("景点");
+
+
+			//get the name of current city
+			function getCity(result) {
+				var cityName = result.name;
+				localStorage.setItem("currentCity", cityName);
+
+				//map.setCenter(cityName);
+				WL.Logger.debug("You are now in: "+cityName);
+			}
+
+			var currentCity = new BMap.LocalCity();
+			currentCity.get(getCity);
+
+			setCityName();
+
 		}
 		else {
 			WL.Logger.error('failed'+this.getStatus());
 		}
 	},{enableHighAccuracy: true});
 	
+}
+
+function setCityName() {
+	var currentCityName = localStorage.getItem("currentCity");
+	document.getElementById('cityName').innerHTML= currentCityName;
 }
 
 function getCurrentPositionByBaiduMap() {
@@ -76,35 +94,40 @@ function loadScenicList(cityCode) {
 				var response = result.invocationResult.result;
 
 				var senics = JSON.parse(response);
-				//WL.Logger.debug(senics);
 
 				$seniclist = $('#seniclist');
 				
 				for(var i=0; i<senics.length ; i++) {
 					var name = senics[i].name;
-					//var info = senics[i].info;
 					var icon = senics[i].icon;
-					//document.write(info);
-					//WL.Logger.debug("Name: "+ name + ", INFO:" + info);
-					
 					$senicItem = $('<li><a href="#"><img src="'+icon+'" alt="'+name+'" /><h3>'+name+'</h3></a></li>');
-//					$senicItem = $('<li><a href="#" id="'+name+'"></a></li>');
 					$senicItem.appendTo($seniclist);
-//
-//					
-//					$senicItemBtn = $('#'+name);
-//					
-//					$senicItemBtnImg = $('<img />').attr({ src: icon});
-//					$senicItemBtnTitle = $('<h3>'+name+'</h3>');
-//					
-//					$senicItemBtnImg.appendTo($senicItemBtn);
-//					$senicItemBtnTitle.appendTo($senicItemBtn);					
 				}
 				
 			}
 		},
 		onFailure : function(result) {
 			WL.Logger.error("Scenic retrieve failure");
+		}
+	});
+}
+
+function getCodeByCityName(cityName) {
+	var invocationData = {
+		adapter: "MongoAdapter",
+		procedure: "getCodeByName",
+		parameters: [cityName]
+	};
+
+	WL.Client.invokeProcedure(invocationData, {
+		onSuccess : function(result) {
+			if(result.invocationResult.isSuccessful) {
+				var response = result.invocationResult.result;
+				localStorage.setItem("cityCode", response.toString());
+			}
+		},
+		onFailure : function(result) {
+			WL.Logger.error("Cannot get the table of city codes");
 		}
 	});
 }

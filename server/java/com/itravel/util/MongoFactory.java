@@ -3,8 +3,8 @@ package com.itravel.util;
 import java.net.UnknownHostException;
 
 import com.itravel.dao.CityDAO;
+import com.itravel.dao.CodeTableDAO;
 import com.itravel.dao.ScenicDAO;
-
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
@@ -31,5 +31,9 @@ public class MongoFactory {
 	
 	public ScenicDAO getScenicDAO() {
 		return new ScenicDAO();
+	}
+	
+	public CodeTableDAO getCodeTableDAO() {
+		return new CodeTableDAO();
 	}
 }

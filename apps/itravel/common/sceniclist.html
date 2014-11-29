@@ -1,29 +1,11 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Scenic List</title>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
-    <!--
-        <link rel="shortcut icon" href="images/favicon.png">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    -->
-    <link href="jqueryMobile/jquery.mobile-1.4.5.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <script>window.$ = window.jQuery = WLJQ;</script>
-    <script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
-</head>
-<body>
-<div data-role="page" id="page">
-    <div data-role="header">
-    	<a href="map.html" data-rel="back" data-icon="back" data-role="button">Back</a>
+<section data-role="page" id="page" xmlns="http://www.w3.org/1999/html">
+    <header data-role="header">
         <h1>Scenic List</h1>
         <a href="build.html" data-role="button" data-icon="plus" class="ui-btn-right" data-theme="b">Create</a>
-    </div>
+    </header>
     <!-- /header -->
 
-    <div data-role="content">
+    <div data-role="content" class="ui-content">
         <ul data-role="listview" data-filter="true">
             <li><a href="#">
                 <img src="images/icons/qinhuai_icon.jpg" alt="qinghuai"/>
@@ -48,7 +30,7 @@
     </div>
     <!-- /content -->
 
-    <div data-role="footer" data-position="fixed">
+    <footer data-role="footer" data-position="fixed">
         <div data-role="navbar">
             <ul>
                 <li><a href="index.html" data-icon="home">Home</a></li>
@@ -57,11 +39,8 @@
                 <li><a href="#" data-icon="info">About</a></li>
             </ul>
         </div>
-    </div>
+    </footer>
     <!-- /footer -->
 
-</div>
+</section>
 <!-- /page -->
-
-</body>
-</html>

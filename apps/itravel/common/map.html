@@ -1,42 +1,29 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>map</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
-<link
-	href="native/assets/www/default/jqueryMobile/jquery.mobile-1.4.5.css"
-	rel="stylesheet">
-<link href="jqueryMobile/jquery.mobile-1.4.5.css" rel="stylesheet">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-</head>
-<body>
-	<div data-role="page" id="page">
-		<div data-role="header"><h1>Current City</h1>
-		<a href="sceniclist.html" data-role="button" data-icon="check" class="ui-btn-right" data-theme="b">Check In</a>
-		</div><!-- /header -->
-		
-		<div data-role="content" id="myMap"></div><!-- /content.map -->
-		<div data-role="content" id="r-result"></div><!-- /content.result -->
+<section data-role="page" id="page_map">
+    <header data-role="header">
+        <h1 id="cityName"></h1>
+        <a href="scenic.html" data-role="button" data-icon="check" class="ui-btn-right" data-theme="b">Check In</a>
+    </header>
+    <!-- /header -->
 
-		<script>
-			var point = getCurrentPositionByBaiduMap();
-			$(document).ready(initMap);
-		</script>
-		
-		<div data-role="footer" data-position="fixed">
-	        <div data-role="navbar">
-	            <ul>
-	                <li><a href="index.html" data-icon="home">Home</a></li>
-	                <li><a href="sceniclist.html" data-icon="grid">Travel</a></li>
-	                <li><a href="#" data-icon="star">Share</a></li>
-	                <li><a href="#" data-icon="info">About</a></li>
-	            </ul>
-	        </div>
-	    </div>
-	    <!-- /footer -->
-	</div><!-- /page -->
+        <div data-role="content" id="myMap" class="ui-content"></div>
 
-</body>
-</html>
+        <div data-role="content" id="r-result" class="ui-content"></div>
+
+    <script>
+        var point = getCurrentPositionByBaiduMap();
+        $(document).ready(initMap);
+
+    </script>
+
+    <footer data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="sceniclist.html" data-icon="grid">Travel</a></li>
+                <li><a href="#" data-icon="star">Share</a></li>
+                <li><a href="#" data-icon="info">About</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- /footer -->
+</section><!-- /page -->

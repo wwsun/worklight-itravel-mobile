@@ -2,20 +2,23 @@ package com.itravel.demo;
 
 import java.util.List;
 
-import com.itravel.dao.ScenicDAO;
+import com.itravel.dao.CityDAO;
 import com.itravel.util.MongoFactory;
-
 import com.mongodb.DBObject;
 
 public class Demo1 {
 	public static void main(String[] args){
 		
 		//MongoFactory factory = new MongoFactory();
-		ScenicDAO dao = new MongoFactory().getScenicDAO();
-		List<DBObject> result = dao.getScenicsByCityCode("NJ");
-		//System.out.println(result);
+//		ScenicDAO dao = new MongoFactory().getScenicDAO();
+//		List<DBObject> result = dao.getScenicsByCityCode("NJ");
+//		//System.out.println(result);
+//		
+//		printResult(result);
 		
-		printResult(result);
+		CityDAO cityDao = new MongoFactory().getCityDAO();
+		String result = cityDao.getCodeByName("南京市");
+		System.out.println(result);
 	}
 	
 	public static void printResult(List<DBObject> list) {

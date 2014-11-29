@@ -1,46 +1,42 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>scenic</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
-	<link
-	href="native/assets/www/default/jqueryMobile/jquery.mobile-1.4.5.css"
-	rel="stylesheet">
-	<link href="jqueryMobile/jquery.mobile-1.4.5.css" rel="stylesheet">
-	<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<script src="js/main.js"></script>
-</head>
-<body>
-	<div data-role="page" id="page">
-		<div data-role="header">
-			<h1>Current City</h1>
-		</div><!-- /header -->
-	
-		<div data-role="content">
-			<ul data-role="listview" data-filter="true" id="seniclist">
-							
-			</ul>
-			
-			<script>
-				$(document).ready(loadScenicList("NJ"));
-			</script>
-				
-		</div><!-- /content -->
+<section data-role="page" id="page_scenic">
+    <header data-role="header">
+        <h1>Scenic List</h1>
+    </header>
+    <!-- /header -->
 
-		<div data-role="footer" data-position="fixed">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="index.html" data-icon="home">Home</a></li>
-					<li><a href="sceniclist.html" data-icon="grid">Travel</a></li>
-					<li><a href="#" data-icon="star">Share</a></li>
-					<li><a href="#" data-icon="info">About</a></li>
-				</ul>
-			</div>
-		</div>
-		<!-- /footer -->
-	</div><!-- /page -->
+    <div data-role="content">
 
-</body>
-</html>
+        <ul data-role="listview" data-filter="true" data-inset="true" id="seniclist">
+
+        </ul>
+
+        <script>
+            var currentCity = localStorage.getItem("currentCity");
+            getCodeByCityName(currentCity);
+            var currentCityCode = localStorage.getItem("cityCode");
+            loadScenicList(currentCityCode);
+            //$(document).ready(loadScenicList(currentCityCode));
+        </script>
+
+        <div data-role="collapsible">
+            <h1>How to play</h1>
+            <P>You can find the counterpart photo from your travel, and then take it.</P>
+        </div>
+
+    </div>
+    <!-- /content -->
+
+
+
+    <footer data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="sceniclist.html" data-icon="grid">Travel</a></li>
+                <li><a href="#" data-icon="star">Share</a></li>
+                <li><a href="about.html" data-icon="info">About</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- /footer -->
+</section><!-- /page -->

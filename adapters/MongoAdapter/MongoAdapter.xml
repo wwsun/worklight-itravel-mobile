@@ -28,4 +28,5 @@
 
 	
 	<procedure name="getScenicsByCityCode" />
+	<procedure name="getCodeByName" />
 </wl:adapter>
