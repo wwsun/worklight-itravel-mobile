@@ -26,7 +26,7 @@ public class CityDAO {
 		cursor.close();
 		return cities;
 	}
-	
+		
 	public String getCodeByName(String name) {
 		DBObject query = QueryBuilder.start("name").is(name).get();
 		DBObject result = cityCollection.findOne( query, new BasicDBObject("city_code", true).append("_id", false));

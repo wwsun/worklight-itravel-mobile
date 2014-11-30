@@ -12,9 +12,6 @@
         <copyright>Copyright My Company</copyright>
     </author>
     <mainFile>index.html</mainFile>
-    <features>
-        <JSONStore/>
-    </features>
     <thumbnailImage>common/images/thumbnail.png</thumbnailImage>
     <android version="1.0">
         <worklightSettings include="false"/>

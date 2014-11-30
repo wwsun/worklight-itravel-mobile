@@ -98,10 +98,16 @@ function loadScenicList(cityCode) {
 				$seniclist = $('#seniclist');
 				
 				for(var i=0; i<senics.length ; i++) {
+
+					$cityStr = JSON.stringify(senics[i]);
+					//WL.Logger.debug("3.>>>>>"+JSON.stringify(senics[i]));
+
 					var name = senics[i].name;
 					var icon = senics[i].icon;
-					$senicItem = $('<li><a href="#"><img src="'+icon+'" alt="'+name+'" /><h3>'+name+'</h3></a></li>');
+					var info = senics[i].info;
+					$senicItem = $('<li><a href="scenic-detail.html" onclick="storeChosenScenicInfo($cityStr)"><img src="'+icon+'" alt="'+name+'" /><h3>'+name+'</h3><p>'+info+'</p></a></li>');
 					$senicItem.appendTo($seniclist);
+					$seniclist.listview("refresh");//refresh the element make css available
 				}
 				
 			}
@@ -130,4 +136,21 @@ function getCodeByCityName(cityName) {
 			WL.Logger.error("Cannot get the table of city codes");
 		}
 	});
+}
+
+function storeChosenScenicInfo(scenic) {
+	localStorage.setItem("scenicChoice", scenic);
+}
+
+function displayChosenScenicInfo() {
+	var scenic = localStorage.getItem("scenicChoice");
+	var scenicJson = JSON.parse(scenic);
+	$currentScenicDiv = $('#scenic_detail');
+	$currentScenicImg = $('<img src="'+scenicJson.icon+'"><h3>Name: '+scenicJson.name+'</h3>');
+	$currentScenicName = $('<p>'+scenicJson.info+'</p>');
+	$currentScenicStar = $('<p>Score: '+scenicJson.star+'</p>');
+	$currentScenicImg.appendTo($currentScenicDiv);
+	$currentScenicName.appendTo($currentScenicDiv);
+	$currentScenicStar.appendTo($currentScenicDiv);
+	//$currentScenicUL.listview("refresh");
 }

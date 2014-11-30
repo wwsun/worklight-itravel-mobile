@@ -7,10 +7,10 @@ function getScenicsByCityCode(cityCode) {
 	};
 }
 
-function getCodeByName(cityName) {
+function getCodeByName(name) {
 	var cityDAO = new com.itravel.util.MongoFactory().getCityDAO();
 	
 	return {
-		result : cityDAO.getCodeByName(cityName)
+		result : cityDAO.getCodeByName(name)
 	};
 }
