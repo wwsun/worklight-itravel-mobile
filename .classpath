@@ -4,7 +4,7 @@
 	<classpathentry kind="con" path="com.worklight.studio.plugin.classpath.SERVER_CONTAINER"/>
 	<classpathentry kind="src" path="server/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/MyProject/worklight/ibm-wl/server/lib/mongo-java-driver-2.12.3.jar"/>
+	<classpathentry kind="lib" path="D:/MyProject/jee/WL/server/lib/mongo-java-driver-2.12.3.jar"/>
 	<classpathentry kind="lib" path="server/lib/mongo-java-driver-2.12.3.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

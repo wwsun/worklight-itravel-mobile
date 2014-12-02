@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ibm-wl</name>
+	<name>WL</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -40,7 +40,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1417061506697</id>
+			<id>1417423647253</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -49,7 +49,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1417061506699</id>
+			<id>1417423647253</id>
 			<name></name>
 			<type>26</type>
 			<matcher>

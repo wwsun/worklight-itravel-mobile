@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>iTravel</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <!--
+        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="jqueryMobile/jquery.mobile-1.4.5.min.css">
+    <script>window.$ = window.jQuery = WLJQ;</script>
+    <script src="jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=nHWLWcXdkLCPeu0kAcHdPkuW"></script>
+</head>
+<body style="display: none;">
+<div data-role="page" id="page">
+
+    <div data-role="header">
+        <h1>iTravel</h1>
+    </div>
+
+    <div data-role="header" class="forrit" data-theme="b">
+        Leave your travel in memory!
+    </div>
+
+    <div data-role="content" style="padding: 15px">
+        Start your new travel!
+
+        <ul data-role="listview" data-inset="true">
+            <li><a href="map.html">New Travel</a></li>
+            <li><a href="events.html">Find Events</a></li>
+            <li><a href="detail.html">Quick</a></li>
+        </ul>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="scenic.html" data-icon="grid">Travel</a></li>
+                <li><a href="#" data-icon="star">Share</a></li>
+                <li><a href="about.html" data-icon="info">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="js/initOptions.js"></script>
+<script src="js/main.js"></script>
+<script src="js/messages.js"></script>
+</body>
+</html>

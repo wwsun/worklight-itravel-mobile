@@ -5,24 +5,27 @@
     US Government Users Restricted Rights - Use, duplication or
     disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
 -->
-<wl:adapter name="MongoAdapter"
+<wl:adapter name="WeiboAdapter"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:wl="http://www.worklight.com/integration"
 	xmlns:http="http://www.worklight.com/integration/http">
 
-	<displayName>MongoAdapter</displayName>
-	<description>MongoAdapter</description>
+	<displayName>WeiboAdapter</displayName>
+	<description>WeiboAdapter</description>
 	<connectivity>
 		<connectionPolicy xsi:type="http:HTTPConnectionPolicyType">
-			<protocol>http</protocol>
-			<domain>rss.cnn.com</domain>
-			<port>80</port>
+			<protocol>https</protocol>
+			<domain>api.weibo.com</domain>
+			<port>443</port>	
+			<!-- Following properties used by adapter's key manager for choosing specific certificate from key store  
+			<sslCertificateAlias></sslCertificateAlias> 
+			<sslCertificatePassword></sslCertificatePassword>
+			-->		
 		</connectionPolicy>
 		<loadConstraints maxConcurrentConnectionsPerNode="2" />
 	</connectivity>
 
 
 	
-	<procedure name="getScenicsByCityCode" />
-	<procedure name="getCodeByName" />
+	<procedure name="getWeibo" />
 </wl:adapter>

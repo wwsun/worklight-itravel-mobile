@@ -1,0 +1,27 @@
+<div data-role="page">
+    <div data-role="header">
+        <h1 id="cityName"></h1>
+        <a href="scenic.html" data-role="button" data-icon="check" class="ui-btn-right" data-theme="b">Check In</a>
+    </div>
+
+    <div data-role="content" id="r-map"></div>
+    <div data-role="content" id="r-result"></div>
+
+    <script>
+        setCityName(); //set current title as city name
+        loadBaiduMap(); //load current city map
+        getScenicListByCode(localStorage.getItem("cityCode")); //load the scenic list of current city
+    </script>
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="scenic.html" data-icon="grid">Travel</a></li>
+                <li><a href="#" data-icon="star">Share</a></li>
+                <li><a href="about.html" data-icon="info">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>

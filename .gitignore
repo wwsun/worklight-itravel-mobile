@@ -14,11 +14,11 @@ hs_err_pid*
 #worklight
 
 .settings/
-apps/itravel/.idea/
-apps/itravel/android/
-apps/itravel/legal/
-apps/itravel/mobilewebapp/
-apps/itravel/common/jqueryMobile/
+apps/Travel/.idea/
+apps/Travel/android/
+apps/Travel/legal/
+apps/Travel/mobilewebapp/
+apps/Travel/common/jqueryMobile/
 
 server/conf/
 
