@@ -17,7 +17,7 @@ public class Demo1 {
 //		printResult(result);
 		
 		CityDAO cityDao = new MongoFactory().getCityDAO();
-		String result = cityDao.getCodeByName("Âçó‰∫¨Â∏Ç");
+		String result = cityDao.getCodeByName("ƒœæ© –");
 		System.out.println(result);
 	}
 	
