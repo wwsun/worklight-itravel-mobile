@@ -112,7 +112,7 @@ function displayChosenScenicInfo() {
 	var scenic = localStorage.getItem("scenicChoice");
 	var scenicJson = JSON.parse(scenic);
 	$currentScenicDiv = $('#scenic_detail');
-	$currentScenicImg = $('<img src="'+scenicJson.icon+'"><h3>Name: '+scenicJson.name+'</h3>');
+	$currentScenicImg = $('<img src="'+scenicJson.icon+'" class="img-center"><h3 class="forrit">Name: '+scenicJson.name+'</h3>');
 	$currentScenicName = $('<p>'+scenicJson.info+'</p>');
 	$currentScenicStar = $('<p>Score: '+scenicJson.star+'</p>');
 	$currentScenicImg.appendTo($currentScenicDiv);
@@ -132,7 +132,6 @@ function getNearbyWeibo() {
 		onSuccess: function(result) {
 			WL.Logger.debug("Get weibo successfully!");
 			if(result.invocationResult.interestingData.length > 0) {
-				//Todo:
 				localStorage.setItem("weiboList", JSON.stringify(result.invocationResult.interestingData));
 			} else {
 				WL.Logger.error("Cannot analysis the json file");
@@ -156,4 +155,32 @@ function displayWeiboList() {
 		$weiboLI.appendTo($weiboUL);
 	}
 
+}
+
+function sendWeibo() {
+	var content = $('#comments').val();
+	var invocationData = {
+		adapter: "WeiboAdapter",
+		procedure: "sendWeibo",
+		parameters: [content]
+	};
+
+	WL.Client.invokeProcedure(invocationData, {
+		onSuccess: function(result) {
+			if(result.invocationResult.isSuccessful) {
+				WL.Logger.debug("Send successfully!");
+				WL.SimpleDialog.show("Send result", "Sending successfully!", 
+						[{	text: "OK", 
+							handler: function(){
+								WL.Logger.debug("Button Clicked");
+							}   
+						}]);
+			} else {
+				WL.Logger.error("Cannot analysis the json file");
+			}
+		},
+		onFailure: function(result){
+			WL.Logger.error("Send weibo failure: "+result);
+		}
+	});
 }

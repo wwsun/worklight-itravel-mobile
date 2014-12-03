@@ -1,17 +1,19 @@
 <div data-role="page">
     <div data-role="header" data-theme="b">
-        <h1 id="cityName"></h1>
-        <a href="scenic.html" data-role="button" data-icon="check" class="ui-btn-right" data-theme="b">Check In</a>
+        <h1>Share to Weibo</h1>
     </div>
 
-    <div data-role="content" id="r-map"></div>
-    <div data-role="content" id="r-result"></div>
+    <div data-role="content">
 
-    <script>
-        setCityName(); //set current title as city name
-        loadBaiduMap(); //load current city map
-        getScenicListByCode(localStorage.getItem("cityCode")); //load the scenic list of current city
-    </script>
+        <div data-role="fieldcontainer">
+            <label for="comments">Your comments</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <input type="button" data-inline="true" value="Send" onclick="sendWeibo()">
+        </div>
+
+
+    </div>
 
     <div data-role="footer" data-position="fixed">
         <div data-role="navbar">

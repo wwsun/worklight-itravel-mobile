@@ -1,18 +1,21 @@
 <div data-role="page">
-    <div data-role="header">
+    <div data-role="header" data-theme="b">
         <h1>Detail</h1>
+        <a href="share.html" data-role="button" data-icon="action" class="ui-btn-right" data-theme="b">Share</a>
+
     </div>
 
     <div data-role="content">
+        <div id="scenic_detail" class="ui-body ui-body-a ui-corner-all">
+              
+        </div>
 
-        <div id="scenic_detail"></div>
         <script>
             displayChosenScenicInfo();
         </script>
 
-
         <button id="btnPhoto" data-icon="camera" onclick="takePicture()">I find it!</button>
-        <img id="myImage" src="" class="scenic-image" />
+        <img id="myImage" src="" class="scenic-image"/>
     </div>
 
     <div data-role="footer" data-position="fixed">

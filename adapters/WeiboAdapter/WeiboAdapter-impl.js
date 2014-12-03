@@ -20,3 +20,24 @@ function getWeibo(lng, lat, range) {
 	}	
 	return procedureResponse;
 }
+
+function sendWeibo(content) {
+	var input = {
+			method: "post",
+			path: "/2/statuses/update.json",
+			parameters: {
+				status : content,
+				access_token : "2.00AoNk3BbLIh6D81fe963ef20fYtOp"
+			},
+			returnedContentType : "json"
+	};
+	
+	var backendResponse = WL.Server.invokeHttp(input);
+	var procedureResponse = {};
+	if(backendResponse.isSuccessful) {
+		procedureResponse = backendResponse;
+	} else {
+		procedureResponse.isSuccessful = false;
+	}	
+	return procedureResponse;
+}

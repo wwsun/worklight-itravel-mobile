@@ -28,4 +28,5 @@
 
 	
 	<procedure name="getWeibo" />
+	<procedure name="sendWeibo" />
 </wl:adapter>
