@@ -3,13 +3,13 @@
  var wlInitOptions = {
 	
 	// # To disable automatic hiding of the splash screen uncomment this property and use WL.App.hideSplashScreen() API
-	//autoHideSplash: false,
+	// autoHideSplash: true,
 		 
 	// # The callback function to invoke in case application fails to connect to Worklight Server
 	//onConnectionFailure: function (){},
 	
 	// # Worklight server connection timeout
-	//timeout: 30000,
+	timeout: 30000,
 	
 	// # How often heartbeat request will be sent to Worklight Server
 	//heartBeatIntervalInSecs: 20 * 60,

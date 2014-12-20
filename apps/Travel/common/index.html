@@ -1,55 +1,76 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>iTravel</title>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
-    <!--
+<meta charset="UTF-8">
+<title>iTravel</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<!--
         <link rel="shortcut icon" href="images/favicon.png">
         <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="jqueryMobile/jquery.mobile-1.4.5.min.css">
-    <script>window.$ = window.jQuery = WLJQ;</script>
-    <script src="jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
-    <script src="http://api.map.baidu.com/api?v=2.0&ak=nHWLWcXdkLCPeu0kAcHdPkuW"></script>
+<link rel="stylesheet" href="jqueryMobile/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/main.css">
+<script>
+	window.$ = window.jQuery = WLJQ;
+</script>
+<script src="jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+<script
+	src="http://api.map.baidu.com/api?v=2.0&ak=nHWLWcXdkLCPeu0kAcHdPkuW"></script>
 </head>
 <body style="display: none;">
-<div data-role="page" id="page">
+	<div data-role="page" id="page">
 
-    <div data-role="header" data-theme="b">
-        <h1>iTravel</h1>
-    </div>
+		<div data-role="header" data-theme="b">
+			<h1>iTravel</h1>
+		</div>
 
-    <div data-role="header" class="forrit">
-        Remember your perfect trip
-    </div>
+		<div data-role="header" class="forrit">Remember your perfect trip</div>
 
-    <div data-role="content" style="padding: 15px">
-        <ul data-role="listview" data-inset="true" data-filter="true">
-            <li><a href="map.html">New Travel</a></li>
-            <li><a href="events.html">Find Events</a></li>
-            <li><a href="#">Achievements</a></li>
-            <li><a href="#">Hot topics</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="share.html">TEST</a></li>
-        </ul>
-    </div>
+		<div data-role="content" style="padding: 15px" class="index-bg">
+			<div class="stories">
+				<a href="map.html">
+					<div class="stories_text">
+						<h3>Start your stories</h3>
+						<div class="btn1">
+							<h4 class="btn_a" href=""></h4>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</div>
 
-    <div data-role="footer" data-position="fixed">
-        <div data-role="navbar">
-            <ul>
-                <li><a href="index.html" data-icon="home">Home</a></li>
-                <li><a href="scenic.html" data-icon="grid">Travel</a></li>
-                <li><a href="#" data-icon="star">Share</a></li>
-                <li><a href="about.html" data-icon="info">About</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-<script src="js/initOptions.js"></script>
-<script src="js/main.js"></script>
-<script src="js/messages.js"></script>
+			<div class="menu_box_list">
+				<ul>
+					<li class="active"><a href="#"> <i class="home">
+						</i><span>Home</span></a></li>
+					<li><a href="weibo.html"> <i class="community"></i><span>Find
+								Events</span></a></li>
+					<li><a href="share.html"> <i class="blog"></i><span>Share
+								Weibo</span></a></li>
+					<li><a href="about.html"> <i class="about"></i><span>About</span></a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+
+			<br>
+			<br>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-icon="home">Home</a></li>
+					<li><a href="map.html" data-icon="location">Nearby</a></li>
+					<li><a href="hot.html" data-icon="star">Hot</a></li>
+					<li><a href="weibo.html" data-icon="comment">Talk</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script src="js/initOptions.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/messages.js"></script>
 </body>
 </html>

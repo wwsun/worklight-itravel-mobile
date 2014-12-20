@@ -1,7 +1,7 @@
 function wlCommonInit(){
 	getCurrentPositionByBaiduMap();
-
 	getCodeByCityName(localStorage.getItem("currentCity"));
+	getNearbyWeibo();
 }
 
 //1.store current city name
@@ -62,6 +62,8 @@ function getScenicListByCode(cityCode) {
 			if(result.invocationResult.isSuccessful) {
 				var response = result.invocationResult.result;
 				localStorage.setItem("scenicList", response);
+			} else {
+				localStorage.setItem("scenicList", "{}");
 			}
 		},
 		onFailure : function(result) {
@@ -112,7 +114,7 @@ function displayChosenScenicInfo() {
 	var scenic = localStorage.getItem("scenicChoice");
 	var scenicJson = JSON.parse(scenic);
 	$currentScenicDiv = $('#scenic_detail');
-	$currentScenicImg = $('<img src="'+scenicJson.icon+'" class="img-center"><h3 class="forrit">Name: '+scenicJson.name+'</h3>');
+	$currentScenicImg = $('<img src="'+scenicJson.icon+'" class="img-center"><h3 class="forrit">'+scenicJson.name+'</h3>');
 	$currentScenicName = $('<p>'+scenicJson.info+'</p>');
 	$currentScenicStar = $('<p>Score: '+scenicJson.star+'</p>');
 	$currentScenicImg.appendTo($currentScenicDiv);
@@ -135,6 +137,7 @@ function getNearbyWeibo() {
 				localStorage.setItem("weiboList", JSON.stringify(result.invocationResult.interestingData));
 			} else {
 				WL.Logger.error("Cannot analysis the json file");
+				localStorage.setItem("weiboList","{}");
 			}
 		},
 		onFailure: function(result){
@@ -144,17 +147,17 @@ function getNearbyWeibo() {
 }
 
 function displayWeiboList() {
-	$weiboUL = $('#weibo-list');
+	
+	$weiboList = $('#weibo_list');
 	var weiboJsonArr = JSON.parse(localStorage.getItem("weiboList"));
 	for(var i=0; i<weiboJsonArr.length; i++) {
-		//WL.Logger.error(weiboJsonArr[i].text);
-		$weiboLI = $('<li><img src="'+weiboJsonArr[i].user.avatar_hd+'"><h1>'
-		+weiboJsonArr[i].user.name+'</h1><p>'+weiboJsonArr[i].text
-		+'</p><span class="ui-li-count ui-li-aside">'
-		+weiboJsonArr[i].distance +' m</span></li>');
-		$weiboLI.appendTo($weiboUL);
+		$weiboDiv = $('<div class="image group"><div class="grid images_3_of_1"><img class="img-circle" src="'+
+				weiboJsonArr[i].user.avatar_hd+'"/></div><div class="grid span_2_of_3"><h3>'+
+				weiboJsonArr[i].text+'</h3><p>'+weiboJsonArr[i].user.name+'<small> '+
+				weiboJsonArr[i].distance+'m</small></p></div><div class="clear"></div></div>');
+		
+		$weiboDiv.appendTo($weiboList);
 	}
-
 }
 
 function sendWeibo() {

@@ -6,7 +6,7 @@ function getWeibo(lng, lat, range) {
 				"lat" : lat,
 				"long" : lng,
 				"range" : range,
-				access_token : "2.00AoNk3BbLIh6D81fe963ef20fYtOp"
+				access_token : "2.002vz5tFm2f_sC2f25d617a9yJpihB"
 			},
 			returnedContentType : "json"
 	};
@@ -27,7 +27,7 @@ function sendWeibo(content) {
 			path: "/2/statuses/update.json",
 			parameters: {
 				status : content,
-				access_token : "2.00AoNk3BbLIh6D81fe963ef20fYtOp"
+				access_token : "2.002vz5tFm2f_sC2f25d617a9yJpihB"
 			},
 			returnedContentType : "json"
 	};

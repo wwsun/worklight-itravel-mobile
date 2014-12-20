@@ -16,6 +16,7 @@
     <thumbnailImage>common/images/thumbnail.png</thumbnailImage>
     <android version="1.0">
         <worklightSettings include="false"/>
+    	<pushSender key="AIzaSyBDLFLzKOwYP1NQRRKNjXY02imEK3oT2Ew" senderId="762689675921" />
         <security>
             <encryptWebResources enabled="false"/>
             <testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3"/>

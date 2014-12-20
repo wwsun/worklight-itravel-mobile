@@ -14,6 +14,10 @@ body, html {
     text-align: center;
 }
 
+.index-bg {
+	background:#465e78;
+}
+
 #r-map {
     height: 230px;
     width: 100%;
@@ -33,4 +37,21 @@ body, html {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1em;
+    border: 2px solid #021a40;
+    padding: 1px;  
+}
+
+.img-center-without-border {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img-circle {
+	border-radius: 50%;
 }
