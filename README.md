@@ -9,10 +9,10 @@ To build this app, following techniques are used:
 2. Baidu Map API
 3. Sina Weibo API
 4. MongoDB
-5. Cordova
+5. Cordova (camera)
 
 Author information:
 
-- Weiwei SUN, Southeast University (Naning, China)
-- ww.sun@outlook.com
-- http://wwsun.me
+- Weiwei SUN, Southeast University (Nanjing, China)
+- Mail: ww.sun@outlook.com
+- Homepage: http://wwsun.me
